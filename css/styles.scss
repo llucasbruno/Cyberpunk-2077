@@ -1,0 +1,46 @@
+*, *::after, *::before {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+@import"sass/colors";
+@import"sass/layout";
+@import"sass/typography";
+@import"sass/menudesktop";
+@import "sass/buttons";
+@import"sass/spacing";
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color:$black-light;
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+svg, img {
+    display: block;
+    width: 100%;
+}
+
+.border {
+    border: 1px solid red;
+}
+
+.relative {
+    position: relative;
+}
+
+@import"sass/swipers";
+@import"sass/menumb";
+@import"sass/animations";
+@import"sass/icons";
+@import"sass/footer";
+@import"sass/components";

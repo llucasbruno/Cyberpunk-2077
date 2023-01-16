@@ -1,0 +1,252 @@
+
+.heading-lg:after {
+  content: "";
+  background: url("./.././/../svg/components/bottom-separator-textslider.svg");
+  display: block;
+  height: 10px;
+  background-position: left;
+  background-repeat: no-repeat;
+  display: block;
+  margin-top: 0.5em;
+  width: 100%;
+}
+  
+  /* Single Slide */
+
+.cyber-slider {
+  background: black;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height:100vh;
+
+ 
+  padding: 30px 15px;
+}
+  
+.cyber-slider__wrapper {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+.cyber-slider__slide {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.cyber-slider__slide.active {
+  z-index: 10;
+}
+
+.cyber-slider__slide.active:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 19, 6, 0.438);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  transition: 0.1s;
+  transform: translatex(0);
+}
+  
+/* Img */
+.cyber-slider__imgwrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cyber-slider__imgwrap:after {
+  content: "";
+  display: block;
+}
+
+.cyber-slider__imgwrap img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.5) translate(20%);
+  transition: 0.1s;
+}
+
+.cyber-slider__slide.active:not(.glitching) .cyber-slider__imgwrap img {
+  transform: scale(1);
+}
+  
+/* Content */
+.cyber-slider__content {
+  position: relative;
+  z-index: 1;
+}
+
+.cyber-slider__slidetext {
+  max-width: 650px;
+  background: #f9eb06;
+  width: auto;
+  padding: 30px;
+  position: relative;
+  margin: 30px 15px 60px 15px; /* to compensate for the after element*/
+  
+  .cyber-slider__info {
+    @include responsive(xs) {
+      font-size: .8rem;
+    }
+  }
+
+  @include responsive(s) {
+    padding: 10px 50px;
+    margin: 60px 50px 120px 13px;
+    
+  }
+
+ 
+}
+
+.cyber-slider__slidetext:after {
+  content: "";
+  display: block;
+  left: 0;
+  bottom: -30px;
+  height: 30px;
+  width: 100%;
+  background: url("./..//./../svg/components/bottom-separator-slide.svg");
+  background-position: 0 0px;
+  position: absolute;
+  max-width: 100%;
+}
+  
+/* Controls */
+
+.cyber-slider__controls {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  
+  flex-direction: column;
+  right: 2%;
+  margin: auto;
+  
+
+  @include responsive(m) {
+    bottom: 30px;
+    left: 50%;
+    flex-direction: row;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+  }
+
+  @include responsive(s) {
+    bottom: 30px;
+    left: 50%;
+    flex-direction: row;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+  }
+
+  @include responsive(xs) {
+    bottom: 0;
+    transform: translate(-50%, -5%);
+  }
+  
+}
+
+.cyber-slider__controls span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s;
+}
+
+.cyber-slider__controls span::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #f9eb06;
+}
+.cyber-slider__controls span:hover {
+  opacity: 0.8;
+}
+
+.cyber-slider__controls .current > span {
+  background: url("./..//./../svg/components/current-dot.svg");
+  background-size: contain;
+}
+
+
+/* Glitch Animations */
+  
+.active .cyber-slider__slidetext:after {
+  
+  animation-name: glitch;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: 3;
+  animation-direction: step-end;
+  animation-timing-function: step-end;
+}
+  
+.glitching .cyber-slider__imgwrap .glitch-area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+  
+.glitching .cyber-slider__imgwrap .glitch-area img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 9999;
+  height: 100px;
+  animation: blink 0.3s infinite step-end;
+}
+  
+.glitching .cyber-slider__imgwrap .glitch-area img:nth-child(1) {
+    transform: translate(-20%, 90%) scale(1.3);
+}
+
+.glitching .cyber-slider__imgwrap .glitch-area img:nth-child(2) {
+    transform: translate(10%, 500%) scale(1.3);
+    animation-delay: 0.1s;
+}
+
+.cyber-slider__slide.active.glitching:after {
+  background: rgba(108, 205, 229, 0.4) url(././/../../svg/components/glitch-lines.svg);
+  opacity: 1;
+  transform: translatex(-10%);
+  background-size: contain;
+
+}
+  
+
+  
+
+  
+
+  

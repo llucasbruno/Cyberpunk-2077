@@ -1,0 +1,207 @@
+//menu mobile
+
+
+.bg__menuMb{
+    display: none;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 100;
+    background: linear-gradient(180deg, #210308 0%, #060714 94.06%);
+    width: 100vw;
+    
+    &.active {
+        display: block;
+        animation: fader-menu .3s ease-in-out forwards;
+        
+    }
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url('./.././../svg/bg-menu.svg');
+        background-repeat: no-repeat;
+        
+    }
+}
+
+
+
+.navmenu__mobile {
+    display: none;
+    position: fixed;
+    right: 4%;
+    
+    z-index: 1000;
+    @include responsive(s) {
+        display: block;
+    }
+  
+}
+
+
+.menu {
+    font-family: 'Aldrich', sans-serif;
+    font-size: .7rem;
+    color: $white-normal;
+    width: auto;
+    overflow: hidden;
+    text-align: right;
+
+  .menu__text {
+        display: flex;
+        span {
+            width: 100%;
+            margin-right: -100%;
+            opacity: 0;
+            transition: opacity 200ms linear; 
+        }
+    }
+    
+    &::after, 
+    &::before {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: $white-normal;
+        transition: transform 200ms cubic-bezier(.5, 0, .5, 1);
+    }
+  
+    &::before {
+        transform-origin: top right;
+        transform: scaleX(.4);//--shortLineScale:.4;
+    }
+  
+    &::after {
+        transform-origin: top right;
+        transform: scaleX(.55);// --longLineScale:.55;
+    }
+    
+    &:hover {
+       
+        [data-hover]{
+            opacity: 1;
+        }
+
+        &::after {
+            transform: translateY(.75em) scaleX(.55);// --longLineScale:.55;
+        }
+
+        &::before {
+            transform: translateY(-.75em) scaleX(.4);//--shortLineScale:.4;
+        }
+    }
+}
+
+.open .menu {
+    color: $brth-punk;
+    [data-hover]{
+        opacity: 0;
+    }
+ 
+    [data-close]{
+        opacity: 1;
+        color: $redpunk;
+    }
+
+   &::after {
+        background-color: $brth-punk;
+        transform: translateY(.75em) scaleX(.4);//--shortLineScale:.4;
+    }
+
+    &::before {
+        background-color: $brth-punk;
+        transform: translateY(-.75em) scaleX(.55);// --longLineScale:.55;
+    }
+
+    &:hover {
+        &::after {
+            transform: translateY(.65em) scaleX(.4);//--shortLineScale:.4;
+        }
+        &::before {
+            transform: translateY(-.65em) scaleX(.55);// --longLineScale:.55;
+        }
+    }
+}
+
+
+.menu__mobile {
+    position: fixed;
+    min-width: 460px;
+    padding: 0 35px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(48, 18, 22, 0.38);
+    border: 1px solid #4B1215;
+    box-shadow: 0px 0px 7px 8px rgba(92, 0, 0, 0.23);
+
+    .menu__item {
+        margin-bottom: 24px;
+    }
+    
+    .menu__link {
+        color: $redpunk;
+        font-size: 1.25rem;
+        padding: 16px 24px;
+        position: relative;
+
+        &:hover {
+            color: $redpunk;
+            text-shadow: 0px 0px 7px #CD1117;
+            &::before {
+                transform: translateX(-15px);
+                opacity: 1;
+            }
+
+            &::after{
+                transform: translateX(8px);
+                opacity: 1;
+               
+            
+            }
+            
+        }
+
+
+        &::before {
+            content: '[';
+            color: $brth-punk;
+            margin-right: 7px;
+            opacity: 0;
+            position: absolute;
+            transform: translateX(15px);
+            //transform: translateX(-15px);
+
+            transition: .4s ease;
+            
+        }
+        &::after{
+            content: ']';
+            color: $brth-punk;
+            margin-right: 7px;
+            opacity: 0;
+            position: absolute;
+            transform: translateX(-20px);
+            //transform: translateX(9px);
+            transition: .3s ease;
+            
+            
+        }
+      
+    }
+}

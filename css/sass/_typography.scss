@@ -1,0 +1,272 @@
+
+//typeface-1
+
+@mixin typeface-1($size, $device: desktop) {
+    
+    //h1
+    @if $size == h1 and $device == desktop  {
+        font-family: 'Aldrich', sans-serif;
+        font-size: 4rem; //64px
+        line-height: 100%;
+    } 
+    @else if $size == h1 and $device == mobile  {
+        font-family: 'Aldrich', sans-serif;
+        font-size: 2.25rem; //36px
+        line-height: 110%;
+    }
+
+    //h2
+    @else if $size == h2 and $device == desktop  {
+        font-family: 'Aldrich', sans-serif;
+        font-size: 4rem; //32px
+        line-height: 100%;
+    } 
+    @else if $size == h2 and $device == mobile  {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.25rem; //24px
+        line-height: 110%;
+    }
+
+    //h3
+    @else if $size == h3 and $device == desktop  {
+        font-family: 'Aldrich', sans-serif;
+        font-size: 2.25rem; //36px
+        line-height: 100%;
+    } 
+    @else if $size == h3 and $device == mobile  {
+        font-family: 'Aldrich', sans-serif;
+        font-size: 1.5rem; //24px
+        line-height: 110%;
+    }
+    //h4
+    @else if $size == h4 and $device == desktop  {
+        font-family: 'Aldrich', sans-serif;
+        font-size: 1.5rem; //36px
+        line-height: 100%;
+    } 
+    @else if $size == h4 and $device == mobile  {
+        font-family: 'Aldrich', sans-serif;
+        font-size: 1.2rem; //24px
+        line-height: 110%;
+    }
+
+   
+}
+
+//typeface-2
+
+@mixin typeface-2($size: p2, $device: desktop) {
+    font-family: 'Roboto', sans-serif;
+
+    //p1
+    @if $size == p1 and $device == desktop  {
+        font-size: 1.5rem;
+        line-height: 130%;
+    } 
+    @else if $size == p1 and $device == mobile  {
+        font-size: 1.5rem;
+        line-height: 130%;
+    }
+
+    //p2
+    @if $size == p2 and $device == desktop  {
+        font-size: 1.1rem;
+        line-height: 140%;
+    } 
+    @else if $size == p2 and $device == mobile  {
+        font-size: 1rem;
+        line-height: 150%;
+    }
+}
+
+
+/*h1 {
+    @include typeface-1(h1,desktop );
+
+   
+
+    @include responsive(s) {
+        @include typeface-1(h1,mobile )
+    }
+   
+}
+*/
+
+
+
+:root {
+    --glitched-duration: 0.9s;
+    --glitched-long-duration: 3s;
+   
+}
+
+/* Titles */
+  
+h1.cyberpunk,
+h2.cyberpunk,
+h3.cyberpunk,
+h4.cyberpunk {
+    color: $white-normal;
+    line-height: 2.2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+  
+h1.cyberpunk {
+  font-weight: 300;
+  @include typeface-1(h1,desktop );
+  @include responsive(s) {
+      @include typeface-1(h1,mobile )
+  }
+}
+
+h2.cyberpunk {
+  font-weight: 300;
+  @include typeface-1(h2,desktop );
+  @include responsive(s) {
+      @include typeface-1(h2,mobile )
+  }
+}
+h3 {
+  font-weight: 300;
+  @include typeface-1(h3,desktop );
+  @include responsive(s) {
+      @include typeface-1(h3,mobile )
+  }
+}
+h4.cyberpunk {
+  font-weight: 300;
+  @include typeface-1(h4,desktop );
+  @include responsive(s) {
+      @include typeface-1(h4,mobile )
+  }
+  color: $brth-punk;
+}
+  
+
+  
+
+  
+h1.cyberpunk:before,
+h2.cyberpunk:before,
+h3.cyberpunk:before,
+h4.cyberpunk:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 2px;
+    width: 100%;
+    height: 10px;
+    background-color: $yellow-primary;
+    clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+}
+  
+h1.cyberpunk.glitched {
+  animation-name: h1glitched;
+  animation-duration: calc(var(--glitched-duration) * 1.4);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+  
+h2.cyberpunk.glitched {
+  animation-name: h1glitched;
+  animation-duration: calc(var(--glitched-duration) * 1.7);
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  animation-timing-function: linear;
+}
+  
+  h3.cyberpunk.glitched {
+    animation-name: h1glitched;
+    animation-duration: calc(var(--glitched-duration) * 1.1);
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: ease-out;
+  }
+  
+  h4.cyberpunk.glitched {
+    animation-name: h1glitched;
+    animation-duration: calc(var(--glitched-duration) * 2.1);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+ 
+  
+  h1.cyberpunk.glitched:before {
+    animation-name: h1beforeglitched;
+    animation-duration: calc(var(--glitched-duration) * 2);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  
+  
+  h2.cyberpunk:before {
+    clip-path: polygon(0px 5px, 35px 5px, 40px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 20px 10px, 15px 6px, 0px 6px);
+  }
+  
+  h2.cyberpunk.glitched:before {
+    animation-name: h2beforeglitched;
+    animation-duration: calc(var(--glitched-duration) * 2);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+ 
+  
+  h3.cyberpunk:before {
+    clip-path: polygon(0px 5px, 10px 5px, 15px 0px, 40px 0px, 45px 5px, 100% 5px, 100% 6px, 31px 6px, 27px 2px, 15px 2px, 8px 10px, 0px 10px);
+  }
+  
+  h4.cyberpunk:before {
+    clip-path: polygon(0px 3px, 15px 3px, 20px 0px, 80px 0px, 85px 3px, 100% 3px, 100% 4px, 85px 4px, 80px 7px, 20px 7px, 15px 4px, 0px 4px);
+  }
+  
+  h1.cyberpunk:after,
+  h2.cyberpunk:after,
+  h3.cyberpunk:after,
+  h4.cyberpunk:after,
+  p.cyberpunk:after {
+    content: "_";
+    animation-name: hxafter;
+    animation-duration: var(--glitched-duration);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  h3.cyberpunk:after,
+  h4.cyberpunk:after {
+    animation-direction: reverse;
+    animation-duration: calc(var(--glitched-duration) / 2);
+  }
+  
+
+  
+//p2
+
+p {
+  @include typeface-2(p2,desktop);
+
+  @include responsive(s) {
+     @include typeface-2(p2,mobile);
+  }
+}
+
+p.desc__info {
+  color: $gray-1;
+  letter-spacing: 2px;
+  @include typeface-2(p2,desktop);
+
+  @include responsive(s) {
+      @include typeface-2(p2,mobile);
+  }
+ 
+}
+
+.desc__info {
+  padding: 2rem 0rem;
+    
+}

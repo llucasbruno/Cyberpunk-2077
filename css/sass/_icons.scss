@@ -1,0 +1,52 @@
+.cyber__icons {
+    ul {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+       
+        .cyber__icons--icons {
+            width: 40px;
+
+             .icon__trasparent {
+                fill: transparent;
+             }
+            
+            .cyber-dc,.cyber-yt,.cyber-fb,.cyber-ig,.cyber-tw {
+                fill: $black-dark; 
+            }
+            &:hover { 
+                .cyber-dc,.cyber-yt,.cyber-fb,.cyber-ig,.cyber-tw {
+                    fill: $blue-primary; 
+                    box-shadow: 0px 0px 8px #04D8F5;
+                }
+            }
+        }
+
+
+    }
+}
+
+.cyber__icons {
+    .cyber__icons-hero {
+       transition: .4s ease;
+        &:hover {
+            transform: translate3d(0px, -5px, 0px);
+            .cyber-dc,.cyber-yt,.cyber-fb,.cyber-ig,.cyber-tw {
+                fill: $blue-primary;
+                filter: drop-shadow(0px 0px 26px #04D8F5) drop-shadow(0px 0px 11px #04D8F5);
+                
+            }
+        }
+        
+    }
+
+
+    
+}
+
+
+.consoles__logo, .cyber__icons-hero  {
+    @media screen and (max-width: 900px){
+        display: none;
+    }
+}

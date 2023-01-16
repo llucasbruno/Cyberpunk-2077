@@ -1,0 +1,12 @@
+<svg width="391" height="268" viewBox="0 0 391 268" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="svg-form-1">
+<mask id="mask0_238_645" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="391" height="268">
+<path id="Vector 344" d="M0 181.131V18.4828H84.5405L99.6371 0H374.394L384.961 12.9379V146.014L391 153.407V251.366H253.622L240.035 268H89.0695L0 181.131Z" fill="#F9F002"/>
+</mask>
+<g mask="url(#mask0_238_645)">
+<rect id="image 18" y="-1.23438" width="391" height="268.234" fill="#F9F002"/>
+<image class="cardimg__1" href="./img/cardimg-1.jpg" width="391" height="268"/>
+</g>
+</g>
+
+</svg>

@@ -1,0 +1,40 @@
+
+
+.cyber__about {
+    position: relative;
+
+}
+
+.progress {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    z-index: 300;
+    background-color: $black-dark;
+}
+.progress .progress-bar {
+    width: 5px;
+    //background-color: $brth-punk;
+    background-color: $yellow-dark;
+    height: 0;
+
+    transition: all 700ms ease;
+}
+
+
+#bar {
+    width: 140px;
+    background: $yellow-primary;
+    border-radius: 13px;
+    box-shadow: 0px 0px 62px 5px rgba(249, 240, 2, 0.5), 0px 0px 19.2877px 1.37769px rgba(249, 240, 2, 0.8), 0px 0px 5.51078px 1.37769px #F9F002;    
+    height: 6px;
+    transform: rotate(-90deg);
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    cursor: pointer;
+   
+    left: -15%;
+}
