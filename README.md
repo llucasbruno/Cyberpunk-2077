@@ -41,7 +41,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🚧 Projeto
 
-Live Preview: [https://llucasbruno.github.io/KAF-u/#](https://llucasbruno.github.io/Cyberpunk-2077/)
+Live Preview: https://llucasbruno.github.io/Cyberpunk-2077/
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
