@@ -27,7 +27,7 @@
   <img alt="" src=".github/preview-desktop.png" width="100%">
 </p>
 
-## 🔹 Tecnologias 🔹
+## 🟡 Tecnologias 🟡
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
