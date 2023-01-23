@@ -300,4 +300,49 @@ const next = () => {
   counter = (counter + 1) % phrases.length
 }
 
-next()
+next();
+
+
+
+//acordeon buttons
+
+document.querySelectorAll('.acordeon__content').forEach((item)=> {
+  item.style.maxHeight = 0;
+})
+
+let acordeonButotns = document.querySelectorAll('.acordeon__button');
+
+
+
+
+acordeonButotns.forEach((button)=> {
+  button.addEventListener('click', ()=> {
+    
+    const acordeonContent = button.nextElementSibling;
+
+    
+    button.classList.toggle('active');
+    button.classList.toggle('acordeon__button-active')
+
+    if(button.classList.contains('active')) {
+      acordeonContent.style.maxHeight = acordeonContent.scrollHeight + 'px';
+     
+
+    } else {
+      acordeonContent.style.maxHeight = 0;
+    }
+
+  })
+})
+
+
+
+//light img mouseover
+const lightBody = document.querySelector('.light__body')
+
+lightBody.addEventListener('mousemove', (e) => {
+  const x = e.clientX; //take mouse X moviment
+  const y = e.clientY; //take mouse Y moviment
+  const light = document.querySelector('.light');
+  light.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent 0%, #000 30%)`;
+});

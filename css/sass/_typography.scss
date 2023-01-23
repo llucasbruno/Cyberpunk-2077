@@ -135,13 +135,14 @@ h3 {
       @include typeface-1(h3,mobile )
   }
 }
+
 h4.cyberpunk {
   font-weight: 300;
   @include typeface-1(h4,desktop );
   @include responsive(s) {
       @include typeface-1(h4,mobile )
   }
-  color: $brth-punk;
+  
 }
   
 

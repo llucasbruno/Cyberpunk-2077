@@ -1,0 +1,32 @@
+.footer {
+    font-family: "Aldrich", sans-serif;
+    background: $yellow-primary;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ::before {
+        content: '';
+        position: absolute;
+        background-image: url('./../../svg/components/footer-bottom-darkbar.svg');
+        width: 100vw;
+        height: 100%;
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        display: inline-block;
+        align-items: center;
+        color: $black-normal;
+    }
+}
